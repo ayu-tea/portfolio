@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Download, Code, BarChart3, Database, Brain, Briefcase, Award, BookOpen } from "lucide-react"
+import { Download, Code, BarChart3, Database, Brain } from "lucide-react"
 
 export default function AboutPage() {
   const academics = [
@@ -39,7 +39,20 @@ export default function AboutPage() {
     { name: "Fraud Detection in Financial Transactions (On-going)", href: "/projects#fraud-detection-in-financial-transactions" },
   ]
 
-  const experience = [
+  const professionalExperience = [
+    {
+      title: "Data Analytics Intern",
+      company: "Reliance Industries Limited",
+      period: "Feb 2026 – Present",
+      location: "Nagothane Manufacturing Division",
+      bullets: [
+        "Built Power BI dashboards for PR Review, MOC, JMS, and OLS/OCDA/OCDT process monitoring.",
+        "Analyzed approval workflows, pending requests, aging trends, and bottlenecks across business processes.",
+        "Worked with SQL views, Excel data sources, and operational datasets to support dashboard development.",
+        "Created slicers, KPIs, drill-through views, and visual summaries for leadership-level review.",
+        "Collaborated with stakeholders to validate dashboard logic, improve reporting clarity, and support data-driven decisions.",
+      ],
+    },
     {
       title: "Data Science Intern",
       company: "Imarticus Learning",
@@ -53,6 +66,9 @@ export default function AboutPage() {
         "Presented insights and findings in a structured, stakeholder-facing manner.",
       ],
     },
+  ]
+
+  const coCurricularExperience = [
     {
       title: "Vice-Chief Editor",
       company: "UMIT Writers' Club",
@@ -151,7 +167,11 @@ export default function AboutPage() {
               </p>
 
               <Button asChild size="lg">
-                <a href="https://drive.google.com/drive/folders/1A0hkt8csQawy47rgtmL3Bg3RlE5KFGQi?usp=drive_link" target="_blank">
+                <a
+                  href="https://drive.google.com/drive/folders/1A0hkt8csQawy47rgtmL3Bg3RlE5KFGQi?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Download className="h-5 w-5 mr-2" />
                   Download Resume
                 </a>
@@ -191,6 +211,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-6 mb-16">
             {skills.map((group) => {
               const Icon = group.icon
+
               return (
                 <Card key={group.title} className="bg-purple-400/5">
                   <CardHeader>
@@ -211,11 +232,35 @@ export default function AboutPage() {
             })}
           </div>
 
-          {/* ---------- Experience ---------- */}
-          <h2 className="text-2xl font-semibold mb-8 text-amber-400">Experience</h2>
+          {/* ---------- Professional Experience ---------- */}
+          <h2 className="text-2xl font-semibold mb-8 text-amber-400">
+            Professional Experience
+          </h2>
           <div className="space-y-6 mb-16">
-            {experience.map((job, i) => (
+            {professionalExperience.map((job, i) => (
               <Card key={i} className="bg-amber-400/5">
+                <CardContent className="p-6">
+                  <h3 className="font-semibold">{job.title}</h3>
+                  <p className="text-sm text-muted-foreground">
+                    {job.company} · {job.period}
+                  </p>
+                  <ul className="list-disc list-inside mt-3 text-muted-foreground">
+                    {job.bullets.map((b, j) => (
+                      <li key={j}>{b}</li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* ---------- Co-Curricular Experience ---------- */}
+          <h2 className="text-2xl font-semibold mb-8 text-orange-400">
+            Co-Curricular Experience
+          </h2>
+          <div className="space-y-6 mb-16">
+            {coCurricularExperience.map((job, i) => (
+              <Card key={i} className="bg-orange-400/5">
                 <CardContent className="p-6">
                   <h3 className="font-semibold">{job.title}</h3>
                   <p className="text-sm text-muted-foreground">
