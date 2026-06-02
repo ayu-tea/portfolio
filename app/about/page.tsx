@@ -46,11 +46,10 @@ export default function AboutPage() {
       period: "Feb 2026 – Present",
       location: "Nagothane Manufacturing Division",
       bullets: [
-        "Built Power BI dashboards for PR Review, MOC, JMS, and OLS/OCDA/OCDT process monitoring.",
-        "Analyzed approval workflows, pending requests, aging trends, and bottlenecks across business processes.",
-        "Worked with SQL views, Excel data sources, and operational datasets to support dashboard development.",
-        "Created slicers, KPIs, drill-through views, and visual summaries for leadership-level review.",
-        "Collaborated with stakeholders to validate dashboard logic, improve reporting clarity, and support data-driven decisions.",
+        "Developed interactive Power BI dashboards for operational reporting, workflow monitoring, and performance analysis.","Connected and integrated data from Microsoft SQL Server, Oracle Database, SAP HANA, AspenTech (ODBC), and Excel-based data sources.",
+        "Designed KPI-driven dashboards to track request volumes, approval status, process aging, turnaround times, pending actions, and operational bottlenecks.", 
+        "Built data models, custom DAX measures, drill-through reports, trend analyses, and dynamic visualizations to support business decision-making.", 
+        "Analyzed process performance by identifying delays, monitoring workflow progression, and highlighting areas requiring attention through actionable insights.","Collaborated with stakeholders to gather reporting requirements, validate business logic, ensure data accuracy, and deliver leadership-ready dashboards.",
       ],
     },
     {
